@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="wrapper">
+    <h2>Background remover</h2>
+    <label for="image">
+      <!-- <input placeholder="Enter Image Url" type="text" [(ngModel)]="image_url" id="image" > -->
+       <input type="file" (change)="onFileSelected($event)">
+      <button (click)="submit()">submit</button>
+    </label>
+    <div class="loader" *ngIf="isLoading; else showImage">
+      loading...
+    </div>
+    <ng-template #showImage>
+      <img [src]="image_url" alt="">
+    </ng-template>
+  </div>
+</div>
